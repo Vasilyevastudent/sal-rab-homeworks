@@ -1,19 +1,19 @@
 // Исправьте функцию sendRequest
 // Аргументы функции:
-let userName;// - имя клиента
+let name; // - имя клиента
 let phone; // - телефон клиента
-let address = {street, house, entrance, floor, flat} // - объект с адресом доставки: {street, house, entrance, floor, flat}
-let countOfGoods = [goods] // - список товаров в заказе
+let address = {street, house, entrance, floor, flat}; // - объект с адресом доставки: {street, house, entrance, floor, flat}
+let countOfGoods = [goods]; // - список товаров в заказе
 let sum // - стоимость заказа с учетом скидок и доставки
-return // Как результат функции требуется вернуть JSON,
+return JSON // Как результат функции требуется вернуть JSON,
 // cформированный в соответствии с правилами:
-// Объект data содержит все данные
+let data = {"client": name + phone, order: {"address": address, sum, goods} }// Объект data содержит все данные
 // В объекте data есть свойства:
-let client = 'userName' + 'phone' // - client - строка, имя клиента + телефон клиента;
-let order = {address, sum, goods} // - order - объект, содержащий данные о заказе:
+// - client - строка, имя клиента + телефон клиента;
+// - order - объект, содержащий данные о заказе:
 //     - address - строка с адресом доставки, записанным человекопонятным языком (как в примере)
 //     - sum - стоимость заказа с учетом скидок и доставки
-let goods = [title, count] // - goods: массив объектов с информацией о позициях заказа:
+data.goods = [title,count]; // - goods: массив объектов с информацией о позициях заказа:
 //     - title - название позиции
 //     - count - количество в заказе
 // например:
