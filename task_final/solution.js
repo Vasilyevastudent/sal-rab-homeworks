@@ -3,11 +3,11 @@
 let name; // - имя клиента
 let phone; // - телефон клиента
 let address = {street, house, entrance, floor, flat}; // - объект с адресом доставки: {street, house, entrance, floor, flat}
-let countOfGoods = [goods]; // - список товаров в заказе
+let goods = []; // - список товаров в заказе
 let sum // - стоимость заказа с учетом скидок и доставки
 return JSON // Как результат функции требуется вернуть JSON,
 // cформированный в соответствии с правилами:
-let data = {"client": name + phone, order: {"address": address, sum, goods} }// Объект data содержит все данные
+let data = {"client": name + phone, order: {"address": address,sum, goods} }// Объект data содержит все данные
 // В объекте data есть свойства:
 // - client - строка, имя клиента + телефон клиента;
 // - order - объект, содержащий данные о заказе:
@@ -43,9 +43,8 @@ function sendRequest(name, phone, address, goods, sum) {
     }
 
     data.order.address = address;
-    data.order.sum = name + phone + address + goods + sum;
-
-    data.client = 'Иван';
+    data.order.sum = goods + sum;
+    data.client = name + phone;
 
     let jsonData = JSON.stringify(data);
 
